@@ -22,6 +22,6 @@ Variety hour of accelerated number theory algorithms related to cryptology.
 
 ~ Jon "Misérable" Voight in the 1997 film "Anaconda"
 
-"Songs are non-inconsistent programs playable by&|on Turing-replete (spyro&|xylo)phenoms&|p(>h)o(em)&|(ne)s at the opining ball." 
+"Songs are non-inconsistent programs playable by&|on Turing-replete (spyro&|xylo)phenoms&|p(>!&|h)o(em)&|(ne)s at the opining ball." 
 
 ~ "The Voice" Panelist Davide Hilbért
