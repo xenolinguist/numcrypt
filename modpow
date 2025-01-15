@@ -1,0 +1,48 @@
+# acceleration for power in modular arithmetic
+
+import numpy
+import sympy
+
+a=27
+b=39
+c=a+b
+
+# mode Hint On: why give out free apples when they weren't such apples to me? example of deuces. can you simplify it?
+
+for x in range(c):
+    print((x**sympy.totient(a)-x**(sympy.totient(c)+(sympy.totient(a) % sympy.totient(c)))+x**sympy.totient(b)-x**(sympy.totient(c)+(sympy.totient(b) % sympy.totient(c)))) % c)
+
+# time test:
+
+a=999999
+b=1
+c=a+b
+
+x=9876
+
+t0 = time.time()
+
+for i in range(10):
+    t = sympy.totient(c)
+    print((x**(t+(a % t))+x**(t+(b % t))) % c)
+
+t1 = time.time()
+
+print(t1-t0)
+
+# 0.0219075679779052
+
+t0 = time.time()
+
+for i in range(10):
+    print((x**a+x**b) % c)
+
+t1 = time.time()
+
+print(t1-t0)
+
+# 17.70223736763
+
+# 800+x speedup yay! this is a conservative but not a "representative" test (the latter being "inarguably" inconceivable for bounded sets)
+
+# wherefore art thou modulo?
