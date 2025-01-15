@@ -12,4 +12,4 @@ Variety hour of accelerated number theory algorithms related to cryptology.
 
 "That would be an amazing speedup governa, but is python notorious for parallel?" - Jon "Misérable" Voight in the 1997 film "Anaconda"
 
-"Songs are non-inconsistent programs playable on Turing-replete xylophones at the opining ball." - "The Voice" Panelist Davide Hilbért
+"Songs are non-inconsistent programs playable on Turing-replete xylophones at the topological opining ball." - "The Voice" star Davide Hilbért
