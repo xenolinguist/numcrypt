@@ -43,6 +43,8 @@ print(t1-t0)
 
 # 17.70223736763
 
-# 800+x speedup yay! this is a conservative but not a "representative" test (the latter being "inarguably" inconceivable on a bounded set)
+# 800+x speedup yay! this is a conservative test for what it is but it's not "representative" (the latter requires asymptotic analysis thx it presumably diverges empirically)
+
+# btw, does AbstractionBasis#1(class(O(1)))=AbstractionBasis#2(class(O(1))) for all abstractions over primitive operations? unknot really
 
 # wherefore art thou modulo?
