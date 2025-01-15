@@ -1,7 +1,7 @@
 # numcrypt
 Variety hour of accelerated number theory algorithms related to cryptology.
 
-## Apocrypha:
+## Apocrypha
 "Cryptkeepers raze weak algo systems undead." 
 
 ~ George A. Romero
