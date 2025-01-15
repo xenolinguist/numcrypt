@@ -43,6 +43,6 @@ print(t1-t0)
 
 # 17.70223736763
 
-# 800+x speedup yay! this is a conservative but not a "representative" test (the latter being "inarguably" inconceivable for bounded sets)
+# 800+x speedup yay! this is a conservative but not a "representative" test (the latter being "inarguably" inconceivable on a bounded set)
 
 # wherefore art thou modulo?
