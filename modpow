@@ -20,10 +20,13 @@ c=a+b
 
 x=9876
 
+# edit: why requototient the cyclics?
+
+t = sympy.totient(c)
+
 t0 = time.time()
 
 for i in range(10):
-    t = sympy.totient(c)
     print((x**(t+(a % t))+x**(t+(b % t))) % c)
 
 t1 = time.time()
