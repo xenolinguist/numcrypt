@@ -20,7 +20,7 @@ c=a+b
 
 x=9876
 
-# edit: why requototient the cyclics?
+# edit: why requototient the cyclic group?
 
 t = sympy.totient(c)
 
