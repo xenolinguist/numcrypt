@@ -20,7 +20,7 @@ c=a+b
 
 x=9876
 
-# edit: why requototient the cyclic group?
+# edit: why requototient the cyclic group? one-to-"small"-many presumption for the non-necessity of redundant recalculii
 
 t = sympy.totient(c)
 
