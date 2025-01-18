@@ -26,6 +26,6 @@ Variety hour of accelerated number theory algorithms related to cryptology.
 
 ~ "The Voice" Panelist Davide Hilbért
 
-"Euler was a cool guy he worked really hard even with a blind eye under the tutelage of Newton and Gauss over telemetry through time."
+"Euler was a cool guy he worked really hard even with blind eyes under the tutelage of Newton and Gauss over telemetry through time."
 
-~ Ray-Band Technician
+~ Ray-Band Technician on Behalf of Marie Curie
