@@ -25,3 +25,7 @@ Variety hour of accelerated number theory algorithms related to cryptology.
 "Songs are non-inconsistent programs playable by&|on Turing-replete (spyro&|xylo)phenom&|p(>!&|h<)o(em&|ne)s at the opining ball." 
 
 ~ "The Voice" Panelist Davide Hilbért
+
+"Euler was a cool guy he worked really hard even with a blind eye under the tutelage of Newton and Gauss over telemetry through time."
+
+~ Ray-Band Technician
