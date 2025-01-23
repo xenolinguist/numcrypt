@@ -7,7 +7,7 @@ I'm going to try and complete a legitimate proof I'm working on for P=NP by tryi
 
 https://www.geeksforgeeks.org/proof-that-traveling-salesman-problem-is-np-hard/
 
-Can we also prove that because they don't trisect the graph they fail to understand that TSP is not NP-Hard but NP-Complete? Lol tardy! :P
+Can we also prove that because they don't trisect the graph they fail to understand that TSP is not NP-Hard but NP-Complete? Lol tardy! Not sure. :P
 
 I have a video of me working on the problem in airplane mode on my phone last night this is my intellectual property boggle that it's a donation to science anyhow I'll have a great time working on math/CS attempting to prove/disprove "hard" theorems I don't know what that will do but please stay tuned...
 
