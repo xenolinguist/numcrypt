@@ -3,6 +3,8 @@ Variety hour of accelerated number theory algorithms related to cryptology.
 
 ## Apocrypha
 
+If I get sufficient support I'm going to try and complete a legitimate proof I'm working on for P=NP by trying to reduce the Travelling Salesman Problem from NP to P in polynomial time by constructing the complete graph, trisecting within the nC3 triangular 3-sets, possibly repeatedly and then seeing if you can construct a worst case convergence in polynomially-time many parallel threads. Anyways, I don't know really I can only assume that CS did an exhaustive proof search but if a constructive proof does not exist then NP cannot be contained in P. Due to the mutual interreducibility of one NP problem to another in polynomial-time, then if I can construct a provably "maximally efficient" solution for TSP then it maps to either P or NP and therefore decides the yay/nay of their equivalence relation into potentially a proper set containment.
+
 Advanced Physical Device Conjecture:
 
 Feynman (Specifiable) Mind Mapping Machine.
