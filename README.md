@@ -5,6 +5,10 @@ Variety hour of accelerated number theory algorithms related to cryptology.
 
 I'm going to try and complete a legitimate proof I'm working on for P=NP by trying to reduce the Travelling Salesman Problem from NP to P in polynomial time by constructing the complete graph, trisecting within the nC3 triangular 3-sets, (possibly repeatedly) or in some generalized way and then seeing if you can construct a worst case convergence in polynomially-timely many parallel threads. Anyways, I don't know really I can only assume that CS did an exhaustive proof search but if a constructive proof does not exist on an NDTM then NP cannot be contained in P. Due to the mutual interreducibility of one NP problem to another in polynomial-time, then if I can construct a provably "maximally efficient" solution for TSP then it maps to either P or NP and therefore decides the yay/nay of their equivalence relation into potentially a proper set containment. Be back later on...
 
+https://www.geeksforgeeks.org/proof-that-traveling-salesman-problem-is-np-hard/
+
+Can we also prove that because they don't trisect the graph they fail to understand that TSP is not NP-Hard but NP-Complete? Lol tardy! :P
+
 I have a video of me working on the problem in airplane mode on my phone last night this is my intellectual property boggle that it's a donation to science anyhow I'll have a great time working on math/CS attempting to prove/disprove "hard" theorems I don't know what that will do but please stay tuned...
 
 Advanced Physical Device Conjecture:
