@@ -2,6 +2,13 @@
 Variety hour of accelerated number theory algorithms related to cryptology.
 
 ## Apocrypha
+
+Advanced Physical Device Conjecture:
+
+Feynman (Specifiable) Mind Mapping Machine.
+ 
+There are (remote but uncentralizably undisentangleable) read signals and write signals teleportable backwards as an interface around the space-time indexes of a (course grid within an) open ball around a (identifiably detectable) physics Kolmogorov Complexity system. This machine shoots enough photons (nay time reversing scorpion tachyons) etc. at the electromagnetic field around (say a human) to measure their resonance reliability signature to formulate dynamic system theories in order to predict their emergent (slowly specifying) biologically originating latency behavior to "yoink" intellectual property. This is called a Yoneda’s Lemma harvesting of an individual’s Kantian categorizations.
+
 "Cryptkeepers raze weak algo systems undead." 
 
 ~ George A. Romero
