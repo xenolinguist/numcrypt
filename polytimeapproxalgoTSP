@@ -112,6 +112,7 @@ def walking_dead(points):
                     for pointx,distx in dictless3[pointw].items():
                         if pointw!=pointx and pointx not in res:
                             prevmaxtotwx=min(prevmaxtotwx,maxtotwx)
+                            # THESE ARE SOME BASIC PROJECTIVE GEOMETRY MEASUREMENTS BUT I THINK I DIDN'T INCLUDE THE EXACT CORRECT ONE(S)
                             # THE BLOCK BELOW NEEDS ITS WORK TO BE COMPLETED FOR THE POLYNOMIAL-TIME APPROXIMATION ALGO PROOF
                             denomwx=((distx[0]-(pointx[0]-(pointw[0]-res[-1][0])))**2+(distx[1]-(pointx[1]-(pointw[1]-res[-1][1]))))**0.5
                             unitwx=((distx[0]-(pointx[0]-(pointw[0]-res[-1][0])))/denomwx,(distx[1]-(pointx[1]-(pointw[1]-res[-1][1])))/denomwx)
