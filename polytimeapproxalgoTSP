@@ -73,7 +73,7 @@ def walking_dead(points):
         thirddist=0
         tempinnerinner=[]
         def resolve(tempinner):
-            first_point = tempinner[0] if ((res[-1][0]-tempinner[0][0])**2+(res[-1][0]-tempinner[0][1])**2)**0.5<((res[-1][0]-tempinner[1][0])**2+(res[-1][0]-tempinner[1][1])**2)**0.5 else tempinner[1]
+            first_point = tempinner[0] if ((res[-1][0]-tempinner[0][0])**2+(res[-1][1]-tempinner[0][1])**2)**0.5<((res[-1][0]-tempinner[1][0])**2+(res[-1][1]-tempinner[1][1])**2)**0.5 else tempinner[1]
             second_point = tempinner[1] if first_point==tempinner[0] else tempinner[0]
             res.append((first_point[0]-res[-1][0],first_point[1]-res[-1][1]))
             res.append((second_point[0]-res[-1][0],second_point[1]-res[-1][1]))
