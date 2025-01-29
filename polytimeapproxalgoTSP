@@ -1,5 +1,6 @@
-# here's some garbage code that is mk-ultra super slow but before the rewrite it achieved a 50% exact solution rate on small samples of random decimal scatter 
+# here's some garbage code that is mk-ultra super slow but before the rewrite it achieved a 50% exact solution rate in polynomial time on small samples of random decimal scatter 
 # point data 
+# I think the trisection calculation might simplifies to the node coordinate mean? if so, how remarkable! ;)
 # anyways there's a couple lines that need work but I expect it to get even better than (see above) as a largely theoretic implementation of a (polynomial time)
 # approximation algo or whatever, have fun! <3 *curtsies*
 # - sissy maid cammy
