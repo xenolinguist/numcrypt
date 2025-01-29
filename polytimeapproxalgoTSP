@@ -1,0 +1,161 @@
+# here's some garbage code that is mk-ultra super slow but before the rewrite it achieved a 50% exact solution rate on small samples of random decimal scatter 
+# point data 
+# anyways there's a couple lines that need work but I expect it to get even better than (see above) as a largely theoretic implementation of a (polynomial time)
+# approximation algo or whatever, have fun! <3 *curtsies*
+# - sissy maid cammy
+import numpy as np
+import math
+import itertools
+import random
+from scipy.spatial.distance import euclidean
+nums = []
+for _ in range(4):
+    nums.append((random.random(),random.random()))
+print(nums)
+#points=[(0,1),(1,0),(1,2),(3,9),(1,5)]
+points=list(set(nums))
+print(nums)
+def trisect_abuse_of_notation(points):
+    edgemids=[]
+    for point1 in points:
+        for point2 in points:
+            if point1!=point2:
+                edgemids.append((1/2*(point1[0]+point2[0]),1/2*(point1[1]+point2[1])))
+    mids=[]
+    if len(edgemids)<=1:
+        mids=edgemids
+        return mids
+    else:
+        for i in range(len(edgemids)):
+            for j in range(i+1,len(edgemids)):
+                if len(edgemids)<=2:
+                    mids.append((1/2*(edgemids[i][0]+edgemids[j][0]),1/2*(edgemids[i][1]+edgemids[j][1])))
+                else:
+                    for k in range(j+1,len(edgemids)):
+                        mids.append((1/3*(edgemids[i][0]+edgemids[j][0]+edgemids[k][0]),1/3*(edgemids[i][1]+edgemids[j][1]+edgemids[k][1])))
+        #print(mids)
+    print(mids)
+    infoptout=(sum([x[0] for x in mids])/len(mids),sum([y[1] for y in mids])/len(mids))
+    return infoptout
+import copy
+def walking_dead(points):
+    temp=copy.deepcopy(points)
+    res=[]
+    res.insert(0,(0,0))
+    nextpointw=(0,0)
+    nextpointx=(0,0)
+    def trisect_pair(tempinner,point):
+        dist0=(abs(tempinner[0][0]-point[0])**2,abs(tempinner[0][1]-point[1])**2)
+        dist1=(abs(tempinner[1][0]-point[0])**2,abs(tempinner[1][1]-point[1])**2)
+        if dist0<dist1:
+            return dist0,tempinner[0],tempinner[1]
+        else:
+            return dist1,tempinner[1],tempinner[0]
+        t0=(0,0)
+    tempcond=copy.deepcopy(temp)
+    prevpointw=(0,0)
+    while True:
+        tempcond2=copy.deepcopy(tempcond)
+        tempcond=copy.deepcopy(tempcond2)
+        dictless2={}
+        dictless3={}
+        tempinner=copy.deepcopy(tempcond)
+        prevpointw=nextpointw
+        maxtotwx=np.inf
+        prevmaxtotwx=np.inf
+        seconddist=0
+        thirddist=0
+        tempinnerinner=[]
+        def resolve(tempinner):
+            first_point = tempinner[0] if ((res[-1][0]-tempinner[0][0])**2+(res[-1][0]-tempinner[0][1])**2)**0.5<((res[-1][0]-tempinner[1][0])**2+(res[-1][0]-tempinner[1][1])**2)**0.5 else tempinner[1]
+            second_point = tempinner[1] if first_point==tempinner[0] else tempinner[0]
+            res.append((first_point[0]-res[-1][0],first_point[1]-res[-1][1]))
+            res.append(second_point)
+            return res
+        def two_step(tempcond,tempinner):
+            dictless2={}
+            dictless3={}
+            seconddist=0
+            thirddist=0
+            for point in tempcond:
+                if len(tempinner)>=2:
+                    tempinner.remove(point)
+                    tempinnerinner=copy.deepcopy(tempinner)
+                    seconddist=trisect_abuse_of_notation(tempinner)
+                    dictless3[point]={}
+                    counter=0
+                    for pointinner in tempinner:
+                        counter+=1
+                        tempinnerinner.remove(pointinner)
+                        if len(tempinnerinner)==1:
+                            thirddist=tempinnerinner[0]
+                        elif len(tempinnerinner)>=2:
+                            thirddist=trisect_abuse_of_notation(tempinnerinner)
+                            if counter<2:
+                                tempinnerinner=copy.deepcopy(tempinner)
+                        else:
+                            break
+                        dictless3[point][pointinner]=thirddist
+                    dictless2[point]=seconddist
+            tempinner=copy.deepcopy(tempcond)
+            return dictless2, dictless3, tempinner, tempinnerinner
+        dictless2, dictless3, tempinner, tempinnerinner = two_step(tempcond,tempinner)
+        if len(tempinner)>2:
+            for pointw,distw in dictless2.items():
+                if pointw not in res:
+                    for pointx,distx in dictless3[pointw].items():
+                        if pointw!=pointx and pointx not in res:
+                            prevmaxtotwx=min(prevmaxtotwx,maxtotwx)
+                            # THE BLOCK BELOW NEEDS ITS WORK TO BE COMPLETED FOR THE POLYNOMIAL-TIME APPROXIMATION ALGO PROOF
+                            denomwx=((distx[0]-(pointx[0]-(pointw[0]-res[-1][0])))**2+(distx[1]-(pointx[1]-(pointw[1]-res[-1][1]))))**0.5
+                            unitwx=((distx[0]-(pointx[0]-(pointw[0]-res[-1][0])))/denomwx,(distx[1]-(pointx[1]-(pointw[1]-res[-1][1])))/denomwx)
+                            denomw=((distw[0]-(pointw[0]-res[-1][0]))**2+(distw[1]-(pointw[1]-res[-1][1]))**2)**0.5
+                            unitw=((distw[0]-(pointw[0]-res[-1][0]))/denomw,(distw[1]-(pointw[1]-res[-1][1]))/denomw)
+                            orthdenomwx=((-distx[1]+(pointx[1]-(pointw[1]-res[-1][1])))**2+(distx[0]-(pointx[0]-(pointw[0]-res[-1][0])))**2)**0.5
+                            orthunitwx=((-distx[1]+(pointx[1]-(pointw[1]-res[-1][1])))/denomwx,(distx[0]-(pointx[0]-(pointw[0]-res[-1][0])))/denomwx)
+                            orthdenomw=((-distw[1]+(pointw[1]-res[-1][1]))**2+(distw[0]-(pointw[0]-res[-1][0]))**2)**0.5
+                            orthunitw=((-distw[1]-(pointw[1]-res[-1][1]))/denomw,(distw[0]-(pointw[0]-res[-1][0]))/denomw)
+                            distancew=((pointw[0]-res[-1][0])**2+(pointw[1]-res[-1][1])**2)**0.5
+                            distancewx=((pointx[0]-(pointw[0]-res[-1][0]))**2+(pointx[1]-(pointw[1]-res[-1][1]))**2)**0.5
+                            approachw=(unitw[0]*(pointw[0]-res[-1][0]))+(unitw[1]*(pointw[1]-res[-1][1]))
+                            approachwx=((unitwx[0]*(pointx[0]-(pointw[0]-res[-1][0])))+(unitwx[1]*(pointx[1]-(pointw[1]-res[-1][1]))))
+                            orthapproachw=(orthunitw[0]*(pointw[0]-res[-1][0]))+(orthunitw[1]*(pointw[1]-res[-1][1]))
+                            orthapproachwx=((orthunitwx[0]*(pointx[0]-(pointw[0]-res[-1][0])))+(orthunitwx[1]*(pointx[1]-(pointw[1]-res[-1][1]))))
+                            maxtotwx=
+                            # WHAT GOES ABOVE THIS LINE WITHIN THE OTHER COMMENT LINE IS THE CODE BLOCK THAT NEEDS WORK TO FINISH THE APPROXIMATION ALGO PROOF
+                            if maxtotwx<prevmaxtotwx:
+                                print("here")
+                                nextpointw=copy.deepcopy(pointw)
+                                nextpointx=copy.deepcopy(pointx)
+                if nextpointw not in res:
+                    res.append((nextpointw[0]-res[-1][0],nextpointw[1]-res[-1][1]))
+                if nextpointw in tempcond:
+                    tempcond.pop(tempcond.index(nextpointw))
+        else:
+            resolve(tempinner)
+            break
+            print("res1",res)
+        if tempcond==[]:
+            break
+    return res
+res=walking_dead(points)
+print(res)
+dist=0
+for i in range(1,len(res)):
+    dist+=((res[i][0]-res[i-1][0])**2+(res[i][1]-res[i-1][1])**2)**0.5
+print(dist)
+def calculate_all_distances(points,res):
+    points_orders=list(itertools.permutations(points))
+    dist_list=[]
+    for pointsord in points_orders:
+        dist=0
+        pointsord2=list(pointsord)
+        pointsord2.insert(0,(0,0))
+        for i in range(1,len(pointsord2)):
+            dist+=((pointsord2[i][0]-pointsord2[i-1][0])**2+(pointsord2[i][1]-pointsord2[i-1][1])**2)**0.5
+        dist_list.append(dist)
+    min_dist_seq=list(points_orders[dist_list.index(min(dist_list))])
+    min_dist_seq.insert(0,(0,0))
+    min_dist=min(dist_list)
+    return min_dist, tuple(min_dist_seq)
+print(calculate_all_distances(points,res))
