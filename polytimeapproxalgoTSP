@@ -64,6 +64,7 @@ def walking_dead(points):
         dictless3={}
         tempinner=copy.deepcopy(tempcond)
         prevpointw=nextpointw
+        # should say "min" etc anyways rough draft sorry my coding skills are usually better as I said I'm sick :)
         maxtotwx=np.inf
         prevmaxtotwx=np.inf
         seconddist=0
