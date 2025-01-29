@@ -1,4 +1,4 @@
-# it's a really crazy slow code but it is (in terms of its requisite parts) polynomial time, please play with on very very small data
+# it's a really crazy slow code but it is (in terms of its requisite parts) polynomial time, please play with on very very small data for now...
 # here's some garbage code that is mk-ultra super slow but before the rewrite it achieved a 50% exact solution rate (in theory) POLYNOMIAL TIME on small samples of random decimal scatter 
 # point data 
 # I think the trisection calculation might simplifies to the node coordinate mean? if so, how remarkable! ;)
